@@ -2,7 +2,7 @@
 
 A modern web application for exploring characters from the Star Wars universe, built with Next.js.
 
-![Star Wars Character Explorer](https://ibb.co.com/PGnY4MyL)
+![Star Wars Character Explorer](https://i.ibb.co.com/Wvw3F0Xh/Capture-2025-05-09-063032.png)
 
 ## Overview
 
