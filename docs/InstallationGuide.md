@@ -12,11 +12,6 @@ Before you begin, ensure you have the following installed:
 
 ## Clone the Repository
 
-```bash
-git clone https://github.com/your-username/star-wars-character-explorer.git
-cd star-wars-character-explorer
-```
-
 ## Backend Setup
 
 ### Navigate to the Backend Directory

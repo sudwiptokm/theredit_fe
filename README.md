@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Star Wars Character Explorer (Frontend)
+
+A modern web application for exploring characters from the Star Wars universe, built with Next.js.
+
+![Star Wars Character Explorer](https://ibb.co.com/PGnY4MyL)
+
+## Overview
+
+The Star Wars Character Explorer allows users to:
+- Browse a list of Star Wars characters
+- Search for characters by name
+- View detailed information about each character
+- Navigate through paginated results
+
+## Technology Stack
+
+- **Next.js 15.3.2** - React framework with server-side rendering
+- **React 19** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Shadcn UI** - Component library
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js (v18 or later)
+- npm (v8 or later) or yarn (v1.22 or later) or pnpm (v8 or later) or bun (v1 or later)
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/sudwiptokm/theredit_fe
+cd theredit_fe
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env.local` file in the root directory with:
+```
+API_URL=http://localhost:5501/characters
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Start the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Character Listing**: View a grid of Star Wars characters
+- **Character Details**: See comprehensive information about each character
+- **Search**: Find characters by name with debounced search
+- **Pagination**: Navigate through multiple pages of results
+- **Responsive Design**: Works on mobile, tablet, and desktop devices
+- **Server-Side Rendering**: Fast initial load and SEO-friendly
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+- `/src/app`: Pages and layouts using Next.js App Router
+- `/src/components`: Reusable React components
+- `/src/lib`: Utility functions and API clients
+- `/public`: Static assets
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Documentation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For more detailed information, please refer to:
+
+- [Technical Documentation](./docs/TechnicalDocumentation.md)
+- [Installation Guide](./docs/InstallationGuide.md)
+- [QA/Test Plan](./docs/QA_TestPlan.md)
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+The compiled output will be in the `.next` directory.
+
+## Deployment
+
+The frontend can be deployed to Vercel, Netlify, or any other static site hosting service. Make sure to set the environment variables as described in the Installation Guide
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [Star Wars API (SWAPI)](https://swapi.py4e.com/) for providing the data
+- [Next.js](https://nextjs.org/) for the amazing framework
+- [Tailwind CSS](https://tailwindcss.com/) for the styling utilities
+- [Shadcn UI](https://ui.shadcn.com/) for the component library
