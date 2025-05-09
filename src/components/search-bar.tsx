@@ -18,13 +18,21 @@ export default function SearchBar() {
 
   const createSearchURL = useCallback(
     (query: string) => {
-      const params = new URLSearchParams(searchParams);
+      // Create a new URLSearchParams object to avoid mutating the original
+      const params = new URLSearchParams(searchParams.toString());
+
+      // Only reset to page 1 if the search query has changed
+      const currentSearch = searchParams.get("search") || "";
+      if (query !== currentSearch) {
+        params.set("page", "1");
+      }
+
       if (query) {
         params.set("search", query);
       } else {
         params.delete("search");
       }
-      params.set("page", "1");
+
       return `/?${params.toString()}`;
     },
     [searchParams]
@@ -44,7 +52,8 @@ export default function SearchBar() {
   useEffect(() => {
     let handler: ReturnType<typeof debounce> | undefined;
 
-    if (searchQuery.trim() !== searchParams.get("search")) {
+    const currentSearch = searchParams.get("search") || "";
+    if (searchQuery.trim() !== currentSearch) {
       handler = debouncedSearch(searchQuery);
     }
 
