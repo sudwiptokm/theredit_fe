@@ -7,10 +7,10 @@ import { Suspense } from "react";
 export default async function Home({
   searchParams,
 }: {
-  searchParams?: { search?: string; page?: string };
+  searchParams?: Promise<{ search?: string; page?: string }>;
 }) {
   // Extract values from searchParams before using them
-  const { search, page } = (await Promise.resolve(searchParams)) || {};
+  const { search, page } = (await searchParams) || {};
 
   return (
     <main className="min-h-screen bg-black text-white">

@@ -8,9 +8,9 @@ import { Suspense } from "react";
 export default async function CharacterPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const characterId = params.id;
+  const characterId = (await params).id;
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -18,7 +18,7 @@ export default async function CharacterPage({
         <Link href="/">
           <Button
             variant="outline"
-            className="mb-6 border-yellow-400 text-yellow-400 hover:bg-yellow-400/90 bg-yellow-400/10 cursor-pointer"
+            className="mb-6 border-yellow-400 text-yellow-400 hover:bg-yellow-400/90 bg-yellow-400/10"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to all characters
